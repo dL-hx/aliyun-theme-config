@@ -3,16 +3,16 @@ export default [
     path: '/',
     component: '../layouts/BlankLayout',
     routes: [
-      {
-        path: '/user',
-        routes: [
-          {
-            name: 'login',
-            path: '/user/login',
-            component: './User/login',
-          },
-        ],
-      },
+      // {
+      //   path: '/user',
+      //   routes: [
+      //     {
+      //       name: 'login',
+      //       path: '/user/login',
+      //       component: './User/login',
+      //     },
+      //   ],
+      // },
       {
         path: '/',
         routes: [
@@ -48,8 +48,21 @@ export default [
                 name: 'list.table-list',
                 icon: 'table',
                 path: '/list',
-                component: './TableList',
+                component: './TableList/router',
               },
+
+              // {
+              //   name: 'list.table-list',
+              //   icon: 'table',
+              //   path: '/list',
+              //   component: './TableList/table',
+              // },
+              // {
+              //   name: 'list.table-list1',
+              //   icon: 'table',
+              //   path: '/list/detail',
+              //   component: './TableList',
+              // },
               {
                 component: './404',
               },

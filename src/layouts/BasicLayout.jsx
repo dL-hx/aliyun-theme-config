@@ -73,13 +73,13 @@ const BasicLayout = (props) => {
     },
   } = props;
   const menuDataRef = useRef([]);
-  useEffect(() => {
-    if (dispatch) {
-      dispatch({
-        type: 'user/fetchCurrent',
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (dispatch) {
+  //     dispatch({
+  //       type: 'user/fetchCurrent',
+  //     });
+  //   }
+  // }, []);
   /** Init variables */
 
   const handleMenuCollapse = (payload) => {
@@ -153,9 +153,13 @@ const BasicLayout = (props) => {
         fontColor: 'rgba(24,144,255,0.15)',
       }}
     >
-      <RouteContext.Consumer>
-        {(p)=><TabLayout p={p} menuData={p.menuData} routes={p.routes} pageTitleInfo={p.pageTitleInfo}>{children}</TabLayout>}
-      </RouteContext.Consumer>
+      {children}
+{/*      <RouteContext.Consumer>
+        {(p)=> {
+          console.log('p',p)
+          return <TabLayout p={p} menuData={p.menuData} routes={p.routes} pageTitleInfo={p.pageTitleInfo}>{children}</TabLayout>
+        }}
+      </RouteContext.Consumer>*/}
 {/*      <Authorized authority={authorized.authority} noMatch={noMatch}>
         {children}
       </Authorized>*/}
