@@ -45,13 +45,11 @@ export default [
                 ],
               },
               {
-                name: 'list.table-list',
-                icon: 'table',
-                path: '/list',
-                component: './TableList/router',
-              },
-
-              // {
+                name: '空白页面',
+                icon: 'smile',
+                path: '/emptypage',
+                component: './EmptyPage',
+              }, // {
               //   name: 'list.table-list',
               //   icon: 'table',
               //   path: '/list',
