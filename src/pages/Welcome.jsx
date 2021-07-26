@@ -5,23 +5,22 @@ import Right1 from "@/pages/Right1";
 
 export default () => {
 
+  const [f,setF]=useState(false)
+  const onclick = ()=>{
+    setF(!f)
+
+  }
   return (
-    <ProCard
-      title="左右分栏带标题"
-      extra="2019年9月28日"
-      bordered
-      headerBordered
-      bodyStyle={{padding:0}}
-    >
-      <ProCard title="左侧详情" colSpan={'20%'}>
-        <div style={{ minHeight: 360 }}>左侧内容</div>
-      </ProCard>
-      <ProCard title="流量占用情况"   colSpan={'80%'}>
-        <div style={{ minHeight: 360,}}>
+    <div className="parent">
+      <div className="left" style={{width:f?0:'20%'}}>
+        <div style={{minHeight: 360, display:f?'none': 'block'}}>左侧内容</div>
+        <div className='blue' onClick={onclick}>折叠</div>
+      </div>
+      <div className="right" style={{width:f?'100%':'80%'}}>
+        <div style={{minHeight: 360,}}>
           {/*  右侧内容*/}
-          <Right1 />
+          <Right1/>
         </div>
-      </ProCard>
-    </ProCard>
-  );
+      </div>
+    </div>)
 };
